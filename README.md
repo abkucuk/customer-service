@@ -1,1 +1,1 @@
-# customer-service
+# customerEntity-service

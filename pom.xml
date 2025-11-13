@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bankcase</groupId>
-	<artifactId>customer-service</artifactId>
+	<artifactId>customerEntity-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>customer-service</name>
+	<name>customerEntity-service</name>
 	<description>Customer Service</description>
 	<url/>
 	<licenses>
