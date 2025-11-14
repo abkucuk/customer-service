@@ -4,3 +4,5 @@ server:
 spring:
   application:
     name: customer-service
+  datasource:
+    url: jdbc:h2:file:./customerdb;AUTO_SERVER=TRUE
