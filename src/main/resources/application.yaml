@@ -6,3 +6,10 @@ spring:
     name: customer-service
   datasource:
     url: jdbc:h2:file:./customerdb;AUTO_SERVER=TRUE
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
