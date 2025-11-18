@@ -19,7 +19,14 @@ public class Customer {
         this.usedCreditLimit = usedCreditLimit;
     }
 
-    // Domain rule
+    public Boolean hasEnoughLimit(BigDecimal amount) {
+        return usedCreditLimit.add(amount).compareTo(creditLimit) <= 0;
+    }
+
+    public BigDecimal usableCreditLimit() {
+        return creditLimit.subtract(usedCreditLimit);
+    }
+
     public void increaseUsedLimit(BigDecimal amount) {
         if (usedCreditLimit.add(amount).compareTo(creditLimit) > 0) {
             throw new IllegalArgumentException("Credit limit exceeded");
@@ -34,7 +41,6 @@ public class Customer {
         }
     }
 
-    // getters...
     public Long getId() {
         return id;
     }
