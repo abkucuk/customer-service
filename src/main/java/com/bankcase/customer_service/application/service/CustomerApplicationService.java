@@ -33,4 +33,17 @@ public class CustomerApplicationService {
 
         return CustomerResponse.from(customer);
     }
+
+    public BigDecimal availableCredit(Long customerId) {
+        Customer customer = repository.findById(customerId)
+                .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
+        return customer.usableCreditLimit();
+    }
+
+    public Boolean hasEnoughLimit(Long customerId, BigDecimal amount) {
+        Customer customer = repository.findById(customerId)
+                .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
+
+        return customer.hasEnoughLimit(amount);
+    }
 }
